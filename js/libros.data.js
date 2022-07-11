@@ -3,7 +3,7 @@ const libros = [
         "id": "1",
         "title": "Caos Magali Tajes",
         "categoria": "poesia",
-        "image": "../img/Caos.jpg",
+        "image": "img/Caos.jpg",
         "price": 2999,
         "stock": 7,
         "cantidad": 1
