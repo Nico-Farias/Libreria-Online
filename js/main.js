@@ -284,6 +284,7 @@ function crearCarrito() {
             cantidadLibros += 1;
 
 
+
             cantidadLibrosEnCarrito.innerHTML = `${cantidadLibros} producto en tu carrito : $ ${totalLibros = cantidadLibros * libro.price}`
             //El total se debe calcular aparte de cada producto, sino te va a imprimir el subtotal del último producto iterado
             //Hace un function por fuera para el total
