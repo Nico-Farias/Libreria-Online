@@ -199,11 +199,7 @@ function crearCarrito() {
                         <div>
                             <p id="cantidadDeLibros${libro.id}" >${cantidadLibros} producto en tu carrito : $  ${totalLibros = cantidadLibros * libro.price}</p>
                         </div>
-                        <div class="botonesCarrito">
-                            <button id="agregar ${libro.id}"  class="btnA" >+</button>
-                            <button id="quitar ${libro.id}"  class="btnQ" >-</button>
-                        </div>
-
+                      
                         
 
                     </div>
@@ -266,53 +262,6 @@ function crearCarrito() {
 
 
 
-
-
-    })
-
-
-
-    carritoSinDuplicados.forEach(libro => {
-        let cantidadLibrosEnCarrito = document.getElementById(`cantidadDeLibros${libro.id}`);
-
-        const btnA = document.getElementById(`agregar ${libro.id}`);
-
-        btnA.addEventListener("click", () => {
-
-            //LA VARIABLE CANTIDAD DE LIBRO VA ACUMULANDO EL TOTAL DE TOOODOS los libros, deberías utilizar otra variable o manera, que diferencia el subtotal de cada libro y la cantidad de cada libro
-            //El asunto es que cantidadLibros y totalLibros tienen incorrecto el  , si resolves eso estaría
-            cantidadLibros += 1;
-
-
-
-            cantidadLibrosEnCarrito.innerHTML = `${cantidadLibros} producto en tu carrito : $ ${totalLibros = cantidadLibros * libro.price}`
-            //El total se debe calcular aparte de cada producto, sino te va a imprimir el subtotal del último producto iterado
-            //Hace un function por fuera para el total
-            calcularTotal();
-
-
-        })
-
-        const btnQ = document.getElementById(`quitar ${libro.id}`);
-        btnQ.addEventListener("click", () => {
-            cantidadLibros -= 1;
-
-            cantidadLibrosEnCarrito.innerHTML = `${cantidadLibros} producto en tu carrito : $ ${totalLibros = cantidadLibros * libro.price}`
-
-
-            // tengo un problema que cuando 1 libro llega a 0, vacia el carrito y me elimina tambien los otros libros, necesitaria que elimine solo el q llega a 0 ,nose como tomar un solo libro y aplicarle esa condicion
-
-            if (cantidadLibros === 0) {
-                vaciarCarrito();
-                crearCarrito();
-
-            }
-            calcularTotal();
-
-        })
-
-
-
     })
 
 
@@ -320,7 +269,8 @@ function crearCarrito() {
 
 }
 
-//Funciona, al agregar los productos desde el btn agregar al carrito agrega todo bien y me suma los subtotales al total, pero cuando uso los botones + y - no me modifica el total
+
+// CALCULAR TOTAL
 
 function calcularTotal() {
 
@@ -376,7 +326,6 @@ function agregarLibro(idLibro) {
 
 
 
-// Varias cosas que hice las vi googleando e investigando como hacerlas, pero algunas no me funcionan o nose como hacerlas
 
 
 
